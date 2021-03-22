@@ -8,38 +8,33 @@
     color: white;
 }
 
-.button:hover {
+.disabled {
+    background-color: rgba(0, 0, 0, 0.02);
+    cursor: no-drop;
+}
+
+.select {
     background-color: #ff3664;
 }
 
-.button:nth-child(1) {
-    color: #ff3664;
-    background-color: rgba(0, 0, 0, 0.5);
+.button:hover:not(.disabled) {
+    background-color: #ff3664;
 }
 
-.button:nth-child(2) {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #ff3664;
+.button:nth-child(3)::after {
+    content: "➗";
+    background: -webkit-linear-gradient(#fff, #fff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1rem;
 }
 
-.button:nth-child(3) {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #ff3664;
-}
-
-.button:nth-child(4) {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #ff3664;
-}
-
-.button:nth-child(8) {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #ff3664;
-}
-
-.button:nth-child(12) {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #ff3664;
+.button:nth-child(4)::after {
+    content: "✖️";
+    background: -webkit-linear-gradient(#fff, #fff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1rem;
 }
 
 .button:nth-child(16) {

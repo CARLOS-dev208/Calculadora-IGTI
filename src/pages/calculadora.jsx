@@ -4,7 +4,7 @@ import { Display } from "../components/display";
 import '../styles/components/calculadora.css'
 
 export class Calculadora extends Component {
-  initialState = { firstValue: 0, secondValue: 0, operator: 1, isSum: false }
+  initialState = { firstValue: 0, secondValue: 0, operator: 1, isSum: false, op: 0 }
 
   constructor(props) {
     super(props);
@@ -30,46 +30,60 @@ export class Calculadora extends Component {
       case 1: return firstValue;
       case 2: return secondValue;
       case 3: return isSum ? firstValue + secondValue : firstValue - secondValue;
+      case 4:
+        if (isSum) {
+          return firstValue * secondValue
+        } else if (firstValue === 0 || secondValue === 0) {
+          document.querySelector('.display').classList.add('displayErro')
+        } else {
+          return firstValue / secondValue
+        }
     }
 
   }
+  // return isSum ? firstValue * secondValue : firstValue / secondValue
+
   pickOperation = (isSum) => {
     this.setState({ operator: 2, isSum })
   }
 
-  execOperation = () => {
-    this.setState({ operator: 3 })
+  execOperation = (op) => {
+    this.setState({ operator: op })
   }
 
   clear = () => {
     this.setState(this.initialState);
+    document.querySelector('.display').classList.remove('displayErro')
   }
 
   render() {
+    const { operator, op } = this.state
+
+
     return (
       <div className={"calculadora"}>
         <div>
           <Display value={this.getValue()} />
         </div>
         <div className={'buttons'}>
-          <Button display={"C"} onClick={() => this.clear()} />
-          <Button display={"+/-"} />
-          <Button display={"/"} />
-          <Button display={"X"} />
-          <Button display={"7"} onClick={() => this.putValue(7)} />
-          <Button display={"8"} onClick={() => this.putValue(8)} />
-          <Button display={"9"} onClick={() => this.putValue(9)} />
-          <Button display={"+"} onClick={() => this.pickOperation(true)} />
-          <Button display={"4"} onClick={() => this.putValue(4)} />
-          <Button display={"5"} onClick={() => this.putValue(5)} />
-          <Button display={"6"} onClick={() => this.putValue(6)} />
-          <Button display={"-"} onClick={() => this.pickOperation(false)} />
-          <Button display={"1"} onClick={() => this.putValue(1)} />
-          <Button display={"2"} onClick={() => this.putValue(2)} />
-          <Button display={"3"} onClick={() => this.putValue(3)} />
-          <Button display={"0"} onClick={() => this.putValue(0)} />
-          <Button display={","} />
-          <Button display={"="} onClick={() => this.execOperation()} />
+          <Button display={"C"} onClick={() => this.clear()} select={true} />
+          <Button display={"+/-"} disabled={operator === 3 || operator === 4} select={true} />
+          <Button display={""} onClick={() => { this.pickOperation(false); this.setState({ op: 4 }) }} disabled={operator !== 1} select={true} />
+          <Button display={""} onClick={() => { this.pickOperation(true); this.setState({ op: 4 }) }} disabled={operator !== 1} select={true} />
+          <Button display={"7"} onClick={() => this.putValue(7)} disabled={operator === 3 || operator === 4} />
+          <Button display={"8"} onClick={() => this.putValue(8)} disabled={operator === 3 || operator === 4} />
+          <Button display={"9"} onClick={() => this.putValue(9)} disabled={operator === 3 || operator === 4} />
+          <Button display={"+"} onClick={() => { this.pickOperation(true); this.setState({ op: 3 }) }} disabled={operator !== 1} select={true} />
+          <Button display={"4"} onClick={() => this.putValue(4)} disabled={operator === 3 || operator === 4} />
+          <Button display={"5"} onClick={() => this.putValue(5)} disabled={operator === 3 || operator === 4} />
+          <Button display={"6"} onClick={() => this.putValue(6)} disabled={operator === 3 || operator === 4} />
+          <Button display={"-"} onClick={() => { this.pickOperation(false); this.setState({ op: 3 }) }} disabled={operator !== 1} select={true} />
+          <Button display={"1"} onClick={() => this.putValue(1)} disabled={operator === 3 || operator === 4} />
+          <Button display={"2"} onClick={() => this.putValue(2)} disabled={operator === 3 || operator === 4} />
+          <Button display={"3"} onClick={() => this.putValue(3)} disabled={operator === 3 || operator === 4} />
+          <Button display={"0"} onClick={() => this.putValue(0)} disabled={operator === 3 || operator === 4} />
+          <Button display={","} disabled={operator === 3 || operator === 4} />
+          <Button display={"="} onClick={() => this.execOperation(op)} disabled={operator === 1} />
         </div>
       </div>
     );
