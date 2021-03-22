@@ -2,12 +2,15 @@
 # CALCULADORA FEITA EM REACT.JS
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/CARLOS-dev208/Calculadora-IGTI/blob/main/LICENSE) 
 
+
+
 # Sobre o projeto
   O Projeto, foi um trabalho do BOOTCAMP ONLINE - DESENVOLVEDOR(A) FRONT END da IGTI - Instituto de Gestão e Tecnologia da Informaçã.
 
+  Link da aplicação:   [![Netlify Status](https://api.netlify.com/api/v1/badges/ab355f37-f82d-4242-aecf-24227e9b4029/deploy-status)](https://carlos-eduardo-calculadora.netlify.app)
+
 ![Home](https://github.com/CARLOS-dev208/Calculadora-IGTI/blob/main/public/calculadora.png)
 
-Link da aplicação:   [![Netlify Status](https://api.netlify.com/api/v1/badges/ab355f37-f82d-4242-aecf-24227e9b4029/deploy-status)](https://carlos-eduardo-calculadora.netlify.app)
 
 ## Desenvolvimento 
 Principais libs e frameworks utilizados:
