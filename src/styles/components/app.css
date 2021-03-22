@@ -1,0 +1,28 @@
+.screen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 7px 7px 0 0;
+    height: 15vh;
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+.display p {
+    background: -webkit-linear-gradient(#1271ff, #01ffd1);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    font-size: 2rem;
+    max-width: 100%;
+    max-height: 100%;
+}

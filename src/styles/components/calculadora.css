@@ -1,0 +1,22 @@
+.calculadora {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 70vh;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.calculadora>div {
+    width: 100%;
+}
+
+.buttons {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+}
