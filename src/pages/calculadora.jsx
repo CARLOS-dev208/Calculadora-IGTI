@@ -38,6 +38,10 @@ export class Calculadora extends Component {
         } else {
           return firstValue / secondValue
         }
+        break;
+
+      case 5: return Math.pow(firstValue, 2)
+
     }
 
   }
@@ -66,8 +70,9 @@ export class Calculadora extends Component {
           <Display value={this.getValue()} />
         </div>
         <div className={'buttons'}>
+
           <Button display={"C"} onClick={() => this.clear()} select={true} />
-          <Button display={"+/-"} disabled={operator === 3 || operator === 4} select={true} />
+          <Button display={"x²"} onClick={() => this.setState({ op: 5 })} select={true} />
           <Button display={""} onClick={() => { this.pickOperation(false); this.setState({ op: 4 }) }} disabled={operator !== 1} select={true} />
           <Button display={""} onClick={() => { this.pickOperation(true); this.setState({ op: 4 }) }} disabled={operator !== 1} select={true} />
           <Button display={"7"} onClick={() => this.putValue(7)} disabled={operator === 3 || operator === 4} />
@@ -83,7 +88,7 @@ export class Calculadora extends Component {
           <Button display={"3"} onClick={() => this.putValue(3)} disabled={operator === 3 || operator === 4} />
           <Button display={"0"} onClick={() => this.putValue(0)} disabled={operator === 3 || operator === 4} />
           <Button display={","} disabled={operator === 3 || operator === 4} />
-          <Button display={"="} onClick={() => this.execOperation(op)} disabled={operator === 1} />
+          <Button display={"="} onClick={() => this.execOperation(op)} />
         </div>
       </div>
     );

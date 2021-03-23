@@ -21,8 +21,24 @@
     background-color: #ff3664;
 }
 
+.button:nth-child(2)::after {
+    /* content: ""; */
+    background: -webkit-linear-gradient(#fff, #fff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1rem;
+}
+
 .button:nth-child(3)::after {
     content: "➗";
+    background: -webkit-linear-gradient(#fff, #fff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1rem;
+}
+
+.button:nth-child(4)::after {
+    content: "✖️";
     background: -webkit-linear-gradient(#fff, #fff);
     background-clip: text;
     -webkit-text-fill-color: transparent;
