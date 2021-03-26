@@ -41,11 +41,11 @@ yarn start
 
 ---
 
-<a href="https://www.robsonnatanael.com.br">
+<div style="display:flex;">
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/62676357?s=400&u=c2e61c42fe62850dd3cd4b7b06cd894097ccfc45&v=4" width="100px;" alt=""/>
- <br />
- <sub><b>Carlos Eduardo Pereira De Sousa Silva</b></sub>
-  
+
+ Carlos Eduardo Pereira De Sousa Silva
+</div>
 
 Feito com ❤️ por Carlos Eduardo Pereira De Sousa Silva 👋🏽 Entre em contato!
 
